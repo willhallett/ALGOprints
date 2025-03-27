@@ -1,153 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vertical Split Background</title>
-    <link rel="stylesheet" href="styles.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vertical Split Background</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-        }
+    html, body {
+      height: auto;
+      min-height: 100vh;
+      overflow-y: auto;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-        .container {
-            display: flex;
-            flex-direction: column; /* Stack images vertically */
-            width: 100vw;
-            height: 100vh;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+    }
 
-        .half {
-            width: 100vw; /* Full width */
-            height: 100vh; /* Each image takes half of the screen height */
-            object-fit: cover; /* Ensures full coverage without distortion */
-        }
+    .half {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
 
-        .name {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: black; /* Adjust color for visibility */
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1rem;
-            text-align: center;
-            font-weight: bold;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-        }
+    .name {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      z-index: 5;
+    }
 
-        .title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: black; /* Adjust color for visibility */
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 5rem;
-            text-align: center;
-            font-weight: bold;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-        }
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: black;
+      font-size: 5rem;
+      text-align: center;
+      font-weight: bold;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+    }
 
-        .phone-number {
-            position:fixed;
-            bottom: 5px;
-            left: 10px;
-            color: black;
-            font-size: 1.2rem;
-            font-family: Arial, Helvetica, sans-serif;
-            /* font-weight:lighter; */
-        }
+    .phone-number {
+      position: relative;
+      bottom: 1%;
+      left: 2%;
+      color: black;
+      font-size: 5rem;
+      font-weight: bolder;
+    }
 
-        .bottom {
-            position: relative;
-        }
-    </style>
+    .bottom {
+      position: relative;
+      height: auto;
+    }
 
-    
+    .half.bottom img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .detail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: auto;
+      max-height: 1500px;
+      margin: 10px;
+      margin-top: 3%; 
+      margin-left: 70%;
+      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.409);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .minibar {
+      background-color: #33333334;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 8px 8px 0 0;
+      user-select: none;
+    }
+
+    .text {
+      max-height: 700px;
+      overflow-y: auto;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      background-color: #ffffff76;
+      border-radius: 0 0 8px 8px;
+      display: none;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="A.png" class="half top">
-        <img src="B.png" class="half top">
-        <img src="C.png" class="half top">
-        <img src="D.png" class="half top">
-        <img src="E.png" class="half top">
-        <img src="G.png" class="half top">
-        <img src="H.png" class="half top">
-        <img src="I.png" class="half top">
-        <img src="J.png" class="half top">
-        <img src="K.png" class="half top">
-        <img src="L.png" class="half top">
-        <img src="M.png" class="half top">
-        <img src="O.png" class="half top">
-        <img src="P.png" class="half top">
-        <img src="Q.png" class="half top">
-        <img src="R.png" class="half top">
-        <img src="S.png" class="half top">
-        <img src="T.png" class="half bottom">
-    </div>   
+  <div class="detail">
+    <div class="minibar" onclick="toggleText()">▶ Code</div>
+    <div class="text" id="textBlock">
+      <pre>
+class Structure {
+  color[] colors = new color[9];
+  color[] plt = new color[10];
+  boolean tr = true;
+  float x, y;
+  int[] a, b;
+  int p, m;
+  float[] c, d;
+  float v, v2;
 
-    <div class = "name">
+  Structure(float x, float y, int p, int m, float v, float v2) {
+    this.x = x;
+    this.y = y;
+    this.p = p;
+    this.m = m;
+    this.v = v;
+    this.v2 = v2;
+    plt[0] = color(222, 69, 0);
+    plt[1] = color(235, 217, 143);
+    plt[2] = color(0, 62, 131);
+    plt[3] = color(0, 89, 46);
+    plt[4] = color(50);
+    plt[5] = color(111, 0, 67);
+    plt[6] = color(209, 188, 25);
+    plt[7] = color(79, 142, 230);
+    plt[8] = color(155, 83, 72);
+    plt[9] = color(181, 209, 204);
+  }
 
+  void configure() {
+    for (int i = 0; i < colors.length; i++) {
+      int a = floor(random(0, plt.length));
+      colors[i] = plt[a];
+    }
 
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
-        !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+
-        <br>
+    a = new int[m];
+    b = new int[m];
 
+    int[] r = {-1, 0, 1};
+
+    for (int i = 0; i < m; i++) {
+      int j = floor(random(0, r.length));
+      int k = floor(random(0, r.length));
+      a[i] = r[j];
+      b[i] = r[k];
+    }
+
+    float[] del = new float[m];
+    c = new float[m];
+    d = new float[m];
+    for (int i = 0; i < m; i++) {
+      int j = floor(random(0, m));
+      int k = floor(random(0, m));
+      c[i] = del[j];
+      d[i] = del[k];
+    }
+  }
+
+  int t = 0;
+  int k = 0;
+
+  void display() {
+    if (t % p == 0) {
+      k++;
+    }
+    if (tr == true) {
+      y += a[k % a.length];
+      x += b[k % b.length];
+    } else {
+      y += c[k % c.length] * v;
+      x += d[k % d.length] * v;
+    }
+    point(x, y);
+    stroke(colors[t % colors.length]);
+
+    if (t >= m) {
+      t = 0;
+      tr = !tr;
+      for (int i = 0; i < colors.length; i++) {
+        colors[i] = plt[floor(random(0, plt.length))];
+      }
+    }
+    t++;
+  }
+
+  void run() {
+    if (struct.x > z && struct.x < width - z && struct.y > z && struct.y < height - z) {
+      struct.display();
+    }
+  }
+}
+      </pre>
     </div>
+  </div>
 
-    <div class="phone-number">
-        ALGOprints
-        
-    </div>
+  <div class="container">
+    <img src="A.png" class="half top">
+    <img src="B.png" class="half top">
+    <img src="C.png" class="half top">
+    <img src="D.png" class="half top">
+    <img src="E.png" class="half top">
+    <img src="G.png" class="half top">
+    <img src="H.png" class="half top">
+    <img src="I.png" class="half top">
+    <img src="J.png" class="half top">
+    <img src="K.png" class="half top">
+    <img src="L.png" class="half top">
+    <img src="M.png" class="half top">
+    <img src="O.png" class="half top">
+    <img src="P.png" class="half top">
+    <img src="Q.png" class="half top">
+    <img src="R.png" class="half top">
+    <img src="S.png" class="half top">
+    <img src="T.png" class="half top">
+    <img src="W.png" class="half bottom">
+  </div>
+
+  <div class="name">
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+    !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+ !@#$%^&*()_+<br>
+  </div>
+
+  <div class="phone-number">RANDOM WALK </div>
+
+  <script>
+    function toggleText() {
+      const textBlock = document.getElementById("textBlock");
+      const bar = document.querySelector(".minibar");
+      if (textBlock.style.display === "none") {
+        textBlock.style.display = "block";
+        bar.textContent = "▼ Code";
+      } else {
+        textBlock.style.display = "none";
+        bar.textContent = "▶ Code";
+      }
+    }
+
+    window.onload = () => {
+      document.getElementById("textBlock").style.display = "none";
+      document.querySelector(".minibar").textContent = "▶ Code";
+    };
+  </script>
 </body>
-
 </html>
